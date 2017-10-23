@@ -89,6 +89,10 @@
   }
 
   // 2.12 classes
+  %deprecated {
+    font-weight: normal;
+    text-decoration: line-through;
+  }
   #definition {
     .big-circle {
       display: none;
@@ -104,6 +108,21 @@
       // these match the styles from the original documentation
       display: table-cell;
       width: 8em;
+    }
+    .symbol {
+      // default to making the entire symbol bold
+      // the symbol is like
+      // onFailure[U](pf: PartialFunction[Throwable, U])(implicit executor: ExecutionContext): Unit
+      font-weight: bold;
+
+      // but if the method is deprecated, we want to undo that, and add a line-through.
+      // unfortunately, the deprecated class is on a sub-element of symbol.
+      .name.deprecated {
+        @extend %deprecated;
+        & ~ span {
+          @extend %deprecated;
+        }
+      }
     }
   }
 

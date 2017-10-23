@@ -10,30 +10,28 @@ module Docs
     }
 
     version '2.12' do
-      self.release = '2.12.4'
-      self.dir = '/Users/Thibaut/DevDocs/Docs/Scala212/api/scala-library' # https://downloads.lightbend.com/scala/2.11.11/scala-docs-2.11.11.zip
+      self.release = '2.12.3'
+      self.dir = '/Users/Thibaut/DevDocs/Docs/Scala212/api/scala-library' # https://downloads.lightbend.com/scala/2.12.3/scala-docs-2.12.3.zip
       self.base_url = 'http://www.scala-lang.org/api/2.12.3/'
       self.root_path = 'index.html'
-      #options[:only_patterns] = [/^package/, /scala\/Any.*\.html/, /scala\/collection\/Bit[^\/]+\.html/]
-      options[:only_patterns] = [/^index/, /scala\/index/, /scala\/concurrent\/[\w.]+/]
       options[:attribution] = <<-HTML
         Scala programming documentation. Copyright (c) 2003-2017 <a
-        href="http://www.epfl.ch" target="_top">EPFL</a>, with contributions from <a
-        href="http://www.lightbend.com" target="_top">Lightbend</a>.
+        href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
+        href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
       html_filters.push 'scala/entries', 'scala/clean_html'
     end
 
     version '2.11' do
-      self.release = '2.11.11'
-      self.dir = '/Users/Thibaut/DevDocs/Docs/Scala211/api/scala-library' # https://downloads.lightbend.com/scala/2.11.11/scala-docs-2.11.11.zip
+      self.release = '2.11.8'
+      self.dir = '/Users/Thibaut/DevDocs/Docs/Scala211/api/scala-library' # https://downloads.lightbend.com/scala/2.11.8/scala-docs-2.11.8.zip
       self.base_url = 'http://www.scala-lang.org/api/2.11.8/'
       self.root_path = 'package.html'
-      #options[:only_patterns] = [/^package/, /scala\/package/, /scala\/Any.*\.html/, /scala\/collection\/Bit[^\/]+\.html/]
       options[:skip_patterns] = [/^index.html/, /index\/index-/]
       options[:attribution] = <<-HTML
-        Scala programming documentation. Copyright (c) 2003-2016 EPFL, with 
-        contributions from Lightbend.
+        Scala programming documentation. Copyright (c) 2003-2016 <a
+        href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
+        href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
       html_filters.push 'scala/entries', 'scala/clean_html'
     end
@@ -43,12 +41,11 @@ module Docs
       self.dir = '/Users/Thibaut/DevDocs/Docs/Scala210' # https://downloads.lightbend.com/scala/2.10.6/scala-docs-2.10.6.zip
       self.base_url = 'http://www.scala-lang.org/api/2.10.6/'
       self.root_path = 'package.html'
-      #self.initial_paths = %w(
-        #index.html)
       options[:skip_patterns] = [/^index.html/, /index\/index-/]
       options[:attribution] = <<-HTML
-        Scala programming documentation. Copyright (c) 2003-2013 EPFL, with 
-        contributions from Typesafe.
+        Scala programming documentation. Copyright (c) 2003-2013 <a
+        href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
+        href="http://typesafe.com" target="_blank">Typesafe</a>.
       HTML
       html_filters.push 'scala/entries', 'scala/clean_html'
     end
