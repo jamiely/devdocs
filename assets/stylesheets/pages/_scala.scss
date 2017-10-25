@@ -1,5 +1,16 @@
+/**
+ * Note that there are currently two documentation themes.
+ * * Scala 2.10, 2.11
+ * * Scala 2.12
+ *
+ * The styles defined here somewhat reflect that. A future change should add
+ * some sort of class at the top-most container that specifies what theme we
+ * are using, to further namespace and group the styles.
+ */
 ._scala {
   @extend %simple;
+  $value-header-color: #2C475C;
+  $type-header-color: #316555;
 
   // this is useful for the index. The index package listing is a deeply nested
   // list, and this pulls all of those lists to the left margin. On the Scala
@@ -22,6 +33,11 @@
   // this is something that is not shown on the site, such as deprecated members
   li[visbl=prt] {
     display: none;
+  }
+
+  // on 2.10, 2.11 docs, this is the trait/class/object at the top
+  .img_kind {
+    color: white;
   }
 
   // this is the type definition at the start of the page
@@ -54,10 +70,10 @@
       margin-left: 5px;
     }
     &.type {
-      background-color: #316555;
+      background-color: $type-header-color;
     }
     &.value {
-      background-color: #2C475C;
+      background-color: $value-header-color;
     }
   }
 
@@ -71,12 +87,12 @@
 
     // this is the heading for type members
     .types > h3 {
-      background: #316555;
+      background: $type-header-color;
     }
 
     // this is the heading for value members
     .values > h3 {
-      background: #2C475C;
+      background: $value-header-color;
     }
 
     // these are the member signatures

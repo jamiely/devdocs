@@ -2,11 +2,19 @@ module Docs
   class Scala
     class CleanHtmlFilter < Filter
       def call
+        always
+
         if slug == 'index'
           root
         else
           other
         end
+      end
+
+      def always
+        # Some of this is just for 2.12
+        # These are things that provide interactive features, which are not supported yet.
+        css('#subpackage-spacer, #search, #mbrsel, .diagram-btn').remove
       end
 
       def root
@@ -16,23 +24,22 @@ module Docs
       end
 
       def other
-        %w(#mbrsel #inheritedMembers #groupedMembers).each do |selector|
+        # these are sections of the documentation which do not seem useful
+        %w(#inheritedMembers #groupedMembers).each do |selector|
           css(selector).remove
         end
 
-
+        # This is the kind of thing we have, class, object, trait
         kind = at_css('.modifier_kind .kind').content
         # this image replacement doesn't do anything on 2.12 docs
         img = at_css('img')
         img.replace %Q|<span class="img_kind">#{kind}</span>| unless img.nil?
         class_to_add = kind == 'object' ? 'value': 'type'
+
+        # for 2.10, 2.11, the kind class is associated to the body. we have to
+        # add it somewhere, so we do that with the #definition.
         css('#definition').add_class class_to_add
 
-        # stuff to clean up 212
-        css('#subpackage-spacer, #search').remove
-        css('.diagram-btn').remove
-
-        # Set id attributes on <h3> instead of an empty <a>
         doc
       end
     end
