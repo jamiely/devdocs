@@ -9,7 +9,7 @@ module Docs
       code: 'https://github.com/scala/scala'
     }
 
-    version 'Library 2.12' do
+    version '2.12 Library' do
       self.release = '2.12.3'
       self.dir = '/Users/Thibaut/DevDocs/Docs/Scala212/api/scala-library' # https://downloads.lightbend.com/scala/2.12.3/scala-docs-2.12.3.zip
       self.base_url = 'http://www.scala-lang.org/api/2.12.3/'
@@ -19,10 +19,10 @@ module Docs
         href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
         href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
-      html_filters.push 'scala/entries', 'scala/clean_html'
+      html_filters.push 'scala/entries', 'scala/clean_html', 'scala/clean_html_212'
     end
 
-    version 'Reflection 2.12' do
+    version '2.12 Reflection' do
       self.release = '2.12.3'
       self.dir = '/Users/Thibaut/DevDocs/Docs/Scala212/api/scala-reflect' # https://downloads.lightbend.com/scala/2.12.3/scala-docs-2.12.3.zip
       self.base_url = 'http://www.scala-lang.org/api/2.12.3/scala-reflect/'
@@ -32,10 +32,10 @@ module Docs
         href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
         href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
-      html_filters.push 'scala/entries', 'scala/clean_html'
+      html_filters.push 'scala/entries', 'scala/clean_html', 'scala/clean_html_212'
     end
 
-    version 'Library 2.11' do
+    version '2.11 Library' do
       self.release = '2.11.8'
       self.dir = '/Users/Thibaut/DevDocs/Docs/Scala211/api/scala-library' # https://downloads.lightbend.com/scala/2.11.8/scala-docs-2.11.8.zip
       self.base_url = 'http://www.scala-lang.org/api/2.11.8/'
@@ -46,10 +46,10 @@ module Docs
         href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
         href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
-      html_filters.push 'scala/entries', 'scala/clean_html'
+      html_filters.push 'scala/entries', 'scala/clean_html', 'scala/clean_html_210'
     end
 
-    version 'Reflection 2.11' do
+    version '2.11 Reflection' do
       self.release = '2.11.8'
       self.dir = '/Users/Thibaut/DevDocs/Docs/Scala211/api/scala-reflect' # https://downloads.lightbend.com/scala/2.11.8/scala-docs-2.11.8.zip
       self.base_url = 'http://www.scala-lang.org/api/2.11.8/scala-reflect/'
@@ -60,7 +60,7 @@ module Docs
         href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
         href="http://www.lightbend.com" target="_blank">Lightbend</a>.
       HTML
-      html_filters.push 'scala/entries', 'scala/clean_html'
+      html_filters.push 'scala/entries', 'scala/clean_html', 'scala/clean_html_210'
     end
 
     version '2.10' do
@@ -74,7 +74,7 @@ module Docs
         href="http://www.epfl.ch" target="_blank">EPFL</a>, with contributions from <a
         href="http://typesafe.com" target="_blank">Typesafe</a>.
       HTML
-      html_filters.push 'scala/entries', 'scala/clean_html'
+      html_filters.push 'scala/entries', 'scala/clean_html', 'scala/clean_html_210'
     end
   end
 end
